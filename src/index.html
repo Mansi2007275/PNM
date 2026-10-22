@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pull-N-Merge | Practice Open Source Contribution</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">🔀</span>
+        <h1>Pull-N-Merge</h1>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#cheatsheet">Cheat Sheet</a>
+        <a href="#progress">Progress</a>
+        <a href="#resources">Resources</a>
+        <!-- ISSUE #7 (Medium): Add a theme toggle button here (sun/moon icon recommended) -->
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h2>Learn GitHub by Doing</h2>
+        <p class="hero-subtitle">
+          Practice real open-source workflows: forks, branches, commits, and pull requests.
+        </p>
+        <div class="hero-cta">
+          <a href="https://github.com/" class="btn btn-primary" target="_blank" rel="noopener">
+            View on GitHub
+          </a>
+          <a href="#cheatsheet" class="btn btn-secondary">Git Cheat Sheet</a>
+        </div>
+        <p class="workshop-info">
+          Workshop: 29th October 2026 • Seminar Hall -1 (Bhabha Block) • ABES Engineering College
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Why Pull-N-Merge?</h2>
+        <div class="cards">
+          <div class="card">
+            <!-- ISSUE #4 (Easy): Improve accessibility of these emoji icons -->
+            <div class="card-icon">📦</div>
+            <h3>Version Control</h3>
+            <p>Master Git fundamentals: repositories, commits, branches, and merges.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h3>Collaboration</h3>
+            <p>Learn how teams work together using pull requests and code reviews.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Open Source</h3>
+            <p>Contribute to real projects and build a strong developer profile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Git Cheat Sheet -->
+    <section id="cheatsheet" class="section section-alt">
+      <div class="container">
+        <h2>Git & GitHub Cheat Sheet</h2>
+        <p class="section-desc">Essential commands every contributor should know.</p>
+        
+        <div class="cheatsheet-grid">
+          <div class="cheat-card">
+            <h3>Setup & Clone</h3>
+            <pre><code>git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git clone &lt;repo-url&gt;
+cd &lt;repo-name&gt;</code></pre>
+          </div>
+          
+          <div class="cheat-card">
+            <h3>Branching</h3>
+            <pre><code>git branch                    # list branches
+git checkout -b feature/xyz   # create + switch
+git switch main               # switch branch
+git branch -d feature/xyz     # delete branch</code></pre>
+          </div>
+          
+          <div class="cheat-card">
+            <h3>Making Changes</h3>
+            <pre><code>git status
+git add .
+git add &lt;file&gt;
+git commit -m "type: message"
+git log --oneline</code></pre>
+          </div>
+          
+          <div class="cheat-card">
+            <h3>Syncing</h3>
+            <pre><code>git pull origin main
+git push origin feature/xyz
+git fetch origin
+git merge main</code></pre>
+          </div>
+          
+          <!-- Intentionally incomplete / has a small error for an easy issue -->
+          <div class="cheat-card">
+            <h3>Pull Requests</h3>
+            <pre><code># After pushing your branch:
+# 1. Go to GitHub
+# 2. Click "Compare & pull request"
+# 3. Fill title and description
+# 4. Link the issue: Closes #123
+# 5. Submit the pull request</code></pre>
+            <!-- Typo intentionally left: "pull request" is fine, but we'll have a docs issue -->
+          </div>
+          
+          <div class="cheat-card">
+            <h3>Useful Tips</h3>
+            <pre><code>git stash                     # temporarily save changes
+git stash pop
+git reset --soft HEAD~1       # undo last commit (keep changes)
+git diff                      # see unstaged changes</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Tracker Section (intentionally incomplete) -->
+    <section id="progress" class="section">
+      <div class="container">
+        <h2>Your Contribution Progress</h2>
+        <p class="section-desc">
+          Track how many contributions you’ve made during the workshop.
+          <!-- ISSUE #6 (Medium): This entire progress tracker is incomplete -->
+        </p>
+        
+        <div class="progress-container">
+          <div class="progress-stats">
+            <div class="stat">
+              <span class="stat-number" id="pr-count">0</span>
+              <span class="stat-label">Pull Requests</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="issue-count">0</span>
+              <span class="stat-label">Issues Closed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" id="commit-count">0</span>
+              <span class="stat-label">Commits</span>
+            </div>
+          </div>
+          
+          <!-- ISSUE #6 (Medium): Implement localStorage + enable these buttons -->
+          <!-- ISSUE #8 (Medium): After #6 works, animate the numbers on change -->
+          <div class="progress-actions">
+            <button class="btn btn-secondary" id="btn-add-pr" disabled>
+              +1 Pull Request
+            </button>
+            <button class="btn btn-secondary" id="btn-add-issue" disabled>
+              +1 Issue Closed
+            </button>
+            <button class="btn btn-secondary" id="btn-add-commit" disabled>
+              +1 Commit
+            </button>
+          </div>
+          
+          <p class="hint">
+            💡 The buttons are currently disabled. Solve <strong>ISSUE #6</strong> to unlock them!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="resources" class="section section-alt">
+      <div class="container">
+        <h2>Learning Resources</h2>
+        <ul class="resource-list">
+          <li>
+            <a href="https://docs.github.com/en/get-started" target="_blank" rel="noopener">
+              Official GitHub Docs – Get Started
+            </a>
+          </li>
+          <li>
+            <a href="https://git-scm.com/doc" target="_blank" rel="noopener">
+              Official Git Documentation
+            </a>
+          </li>
+          <li>
+            <a href="https://www.firsttimersonly.com/" target="_blank" rel="noopener">
+              First Timers Only – Great first issues
+            </a>
+          </li>
+          <li>
+            <a href="https://opensource.guide/" target="_blank" rel="noopener">
+              Open Source Guides
+            </a>
+          </li>
+          <!-- ISSUE #2 (Easy): Add 2–3 more high-quality beginner resources here -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Built with ❤️ for the <strong>Pull-N-Merge</strong> workshop<br>
+        Software Development Club • ABES Engineering College • 2026
+      </p>
+      <p class="footer-note">
+        <!-- ISSUE #3 (Easy): Make the year dynamic (or at least keep it accurate) -->
+        This is a practice repository. Contributions are welcome and encouraged!
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
