@@ -47,11 +47,41 @@ function initProgressTracker() {
 // 4. On first visit, optionally respect prefers-color-scheme
 //
 // CSS variables for dark theme already exist in styles.css
-
 function initThemeToggle() {
-  // Not implemented yet – see ISSUE #7
-  console.log('Theme toggle not yet implemented. See ISSUE #7!');
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  if (!themeToggle) return;
+
+  const savedTheme = localStorage.getItem('theme');
+  let theme = savedTheme || (
+    window.matchMedia('(prefers-color-scheme: dark)').matches? 'dark': 'light'
+  );
+
+  function applyTheme() {
+    if (theme === 'dark') {
+      html.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = '☀️ Light Mode';
+      themeToggle.setAttribute('aria-label', 'Switch to light theme');
+    } else {
+      html.removeAttribute('data-theme');
+      themeToggle.textContent = '🌙 Dark Mode';
+      themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+    }
+  }
+
+  
+  applyTheme();
+
+  
+  themeToggle.addEventListener('click', () => {
+    theme = theme === 'light' ? 'dark' : 'light';
+
+    localStorage.setItem('theme', theme);
+    applyTheme();
+  });
 }
+
 
 // ============================================
 // ISSUE #8 (Medium) – Animate progress numbers
