@@ -28,11 +28,65 @@ const commitCountEl = document.getElementById('commit-count');
 const btnAddPr = document.getElementById('btn-add-pr');
 const btnAddIssue = document.getElementById('btn-add-issue');
 const btnAddCommit = document.getElementById('btn-add-commit');
-
+const btnReset=document.getElementById('btn-reset')
 // Placeholder — currently does nothing useful
+
+
 function initProgressTracker() {
-  console.log('Progress tracker not yet implemented. See ISSUE #6!');
-  // Buttons remain disabled until ISSUE #6 is solved
+
+  // Pull Request Counter
+  let prCount=Number(localStorage.getItem('prCount')) || 0  ;
+  btnAddPr.addEventListener('click',()=>{
+    prCount++;
+    localStorage.setItem('prCount',prCount)
+    applyCount()
+  })
+  function applyCount(){
+    prCountEl.textContent=prCount;
+  }
+  applyCount();
+
+
+  // Commit Counter
+  let commitCount=Number(localStorage.getItem('commitCount') )|| 0 ;
+  btnAddCommit.addEventListener('click',()=>{
+    commitCount++;
+    localStorage.setItem('commitCount',commitCount)
+    applyCommit()
+  })
+  function applyCommit(){
+    commitCountEl.textContent=commitCount;
+  }
+  applyCommit();
+
+
+  // Issue Counter
+  let issueCount=Number(localStorage.getItem('issueCount')) || 0 ;
+  btnAddIssue.addEventListener('click',()=>{
+    issueCount++;
+    localStorage.setItem('issueCount',issueCount)
+    applyIssue()
+  })
+  function applyIssue(){
+    issueCountEl.textContent=issueCount;
+  }
+  applyIssue();
+
+  // Reset Button
+
+  btnReset.addEventListener('click',()=>{
+    commitCount=0;
+    issueCount=0;
+    prCount=0;
+
+    localStorage.setItem('prCount', 0);
+    localStorage.setItem('commitCount', 0);
+    localStorage.setItem('issueCount', 0);
+
+    applyCommit();
+    applyIssue();
+    applyCount();
+  })
 }
 
 // ============================================

@@ -43,8 +43,8 @@ The codebase intentionally contains **issues of varying difficulty levels** so t
 
 - [x] Beautiful landing page with workshop info  
 - [x] Interactive Git command cheat-sheet  
-- [ ] Contribution progress tracker (see Issues)  
-- [ ] Dark/Light theme toggle  
+- [x] Contribution progress tracker (see Issues)  
+- [x] Dark/Light theme toggle  
 - [ ] Quiz on Git & GitHub concepts  
 - [ ] Leaderboard of contributors  
 - [ ] Resource library for open-source beginners  

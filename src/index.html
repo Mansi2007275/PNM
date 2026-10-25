@@ -25,6 +25,7 @@
         <a href="#cheatsheet">Cheat Sheet</a>
         <a href="#progress">Progress</a>
         <a href="#resources">Resources</a>
+        
         <button class="btn btn-secondary" id="theme-toggle" type="button">
           🌙 Dark Mode
         </button>
@@ -169,20 +170,17 @@ git diff                      # see unstaged changes</code></pre>
           <!-- ISSUE #6 (Medium): Implement localStorage + enable these buttons -->
           <!-- ISSUE #8 (Medium): After #6 works, animate the numbers on change -->
           <div class="progress-actions">
-            <button class="btn btn-secondary" id="btn-add-pr" disabled>
+            <button class="btn btn-secondary" id="btn-add-pr" >
               +1 Pull Request
             </button>
-            <button class="btn btn-secondary" id="btn-add-issue" disabled>
+            <button class="btn btn-secondary" id="btn-add-issue" >
               +1 Issue Closed
             </button>
-            <button class="btn btn-secondary" id="btn-add-commit" disabled>
+            <button class="btn btn-secondary" id="btn-add-commit" >
               +1 Commit
             </button>
           </div>
-
-          <p class="hint">
-            💡 The buttons are currently disabled. Solve <strong>ISSUE #6</strong> to unlock them!
-          </p>
+          <button id="btn-reset" class="btn  btn-secondary">Reset</button>
         </div>
       </div>
     </section>
