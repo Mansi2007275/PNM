@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <header class="header">
     <div class="container">
@@ -21,6 +25,10 @@
         <a href="#cheatsheet">Cheat Sheet</a>
         <a href="#progress">Progress</a>
         <a href="#resources">Resources</a>
+        
+        <button class="btn btn-secondary" id="theme-toggle" type="button">
+          🌙 Dark Mode
+        </button>
         <!-- ISSUE #7 (Medium): Add a theme toggle button here (sun/moon icon recommended) -->
       </nav>
     </div>
@@ -76,7 +84,7 @@
       <div class="container">
         <h2>Git & GitHub Cheat Sheet</h2>
         <p class="section-desc">Essential commands every contributor should know.</p>
-        
+
         <div class="cheatsheet-grid">
           <div class="cheat-card">
             <h3>Setup & Clone</h3>
@@ -85,7 +93,7 @@ git config --global user.email "you@example.com"
 git clone &lt;repo-url&gt;
 cd &lt;repo-name&gt;</code></pre>
           </div>
-          
+
           <div class="cheat-card">
             <h3>Branching</h3>
             <pre><code>git branch                    # list branches
@@ -93,7 +101,7 @@ git checkout -b feature/xyz   # create + switch
 git switch main               # switch branch
 git branch -d feature/xyz     # delete branch</code></pre>
           </div>
-          
+
           <div class="cheat-card">
             <h3>Making Changes</h3>
             <pre><code>git status
@@ -102,7 +110,7 @@ git add &lt;file&gt;
 git commit -m "type: message"
 git log --oneline</code></pre>
           </div>
-          
+
           <div class="cheat-card">
             <h3>Syncing</h3>
             <pre><code>git pull origin main
@@ -110,7 +118,7 @@ git push origin feature/xyz
 git fetch origin
 git merge main</code></pre>
           </div>
-          
+
           <!-- Intentionally incomplete / has a small error for an easy issue -->
           <div class="cheat-card">
             <h3>Pull Requests</h3>
@@ -122,7 +130,7 @@ git merge main</code></pre>
 # 5. Submit the pull request</code></pre>
             <!-- Typo intentionally left: "pull request" is fine, but we'll have a docs issue -->
           </div>
-          
+
           <div class="cheat-card">
             <h3>Useful Tips</h3>
             <pre><code>git stash                     # temporarily save changes
@@ -142,7 +150,7 @@ git diff                      # see unstaged changes</code></pre>
           Track how many contributions you’ve made during the workshop.
           <!-- ISSUE #6 (Medium): This entire progress tracker is incomplete -->
         </p>
-        
+
         <div class="progress-container">
           <div class="progress-stats">
             <div class="stat">
@@ -158,24 +166,21 @@ git diff                      # see unstaged changes</code></pre>
               <span class="stat-label">Commits</span>
             </div>
           </div>
-          
+
           <!-- ISSUE #6 (Medium): Implement localStorage + enable these buttons -->
           <!-- ISSUE #8 (Medium): After #6 works, animate the numbers on change -->
           <div class="progress-actions">
-            <button class="btn btn-secondary" id="btn-add-pr" disabled>
+            <button class="btn btn-secondary" id="btn-add-pr" >
               +1 Pull Request
             </button>
-            <button class="btn btn-secondary" id="btn-add-issue" disabled>
+            <button class="btn btn-secondary" id="btn-add-issue" >
               +1 Issue Closed
             </button>
-            <button class="btn btn-secondary" id="btn-add-commit" disabled>
+            <button class="btn btn-secondary" id="btn-add-commit" >
               +1 Commit
             </button>
           </div>
-          
-          <p class="hint">
-            💡 The buttons are currently disabled. Solve <strong>ISSUE #6</strong> to unlock them!
-          </p>
+          <button id="btn-reset" class="btn  btn-secondary">Reset</button>
         </div>
       </div>
     </section>
@@ -226,4 +231,5 @@ git diff                      # see unstaged changes</code></pre>
 
   <script src="script.js"></script>
 </body>
+
 </html>
